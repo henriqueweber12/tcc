@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Cadastro Usuário
+      </ion-title>
+  
+      <ion-buttons end>
+        <button ion-button icon-only (click)="salvar()">
+          <ion-icon name="checkmark"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+<br>  
+    <ion-list>
+      <ion-item> 
+        <ion-label>Tipo</ion-label>
+        <ion-select [(ngModel)]="usuario.tipo" required>
+          <ion-option value="vendedor">Vendedor</ion-option>
+          <ion-option value="cliente">Cliente</ion-option>  
+        </ion-select>  
+      </ion-item>
+
+
+      <ion-item>
+          <ion-label floating>Nome</ion-label>
+          <ion-input type="text" [(ngModel)]="usuario.nome" required></ion-input>
+      </ion-item> 
+<br>
+      <ion-item>
+        <ion-label>Data de Nascimento</ion-label>
+        <ion-datetime displayFormat="DD/MM/YYYY" [(ngModel)]="usuario.datanasc"></ion-datetime>
+      </ion-item>
+    
+<br>
+      <ion-item> 
+            <ion-label>Genero</ion-label>
+            <ion-select [(ngModel)]="usuario.genero">
+              <ion-option value="masculino">Masculino</ion-option>
+              <ion-option value="feminino">Femino</ion-option>  
+            </ion-select>  
+       </ion-item>
+
+       <ion-item> 
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="usuario.email" required></ion-input>  
+   </ion-item>
+
+   <ion-item> 
+    <ion-label floating>Senha</ion-label>
+    <ion-input type="password" [(ngModel)]="usuario.senha" required></ion-input>  
+</ion-item>
+    </ion-list>
+
+   
+
+  </ion-content>

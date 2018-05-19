@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Veículos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngFor="let veiculo of lista">
+
+  <!--  <img src="assets/imgs/jettatsi.png"/> -->
+    <ion-card-content>
+      <ion-card-title>
+        {{veiculo.modelo}}
+        </ion-card-title>
+      <p>
+        {{veiculo.valor}}
+      </p>
+      <button ion-button clear item-end>Gerar Orçamento</button>
+    </ion-card-content>
+  </ion-card>
+
+  <!--  -->
+
+ <!-- <ion-card>
+    <img src="assets/imgs/fusion.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Fusion
+        </ion-card-title>
+      <p>
+        R$ 60.000
+      </p>
+      <button ion-button clear item-end (click)="cadastrarOrcamento()">Gerar Orçamento</button>
+    </ion-card-content>
+  </ion-card>
+-->
+  <!--  -->
+
+  <!--
+  <ion-card>
+    <img src="assets/imgs/cruze.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Cruze
+        </ion-card-title>
+      <p>
+       R$ 45.000
+      </p>
+      <button ion-button clear item-end>Gerar Orçamento</button>
+    </ion-card-content>
+  </ion-card>
+-->
+   <!--  -->
+<!--
+   <ion-card>
+    <img src="assets/imgs/golfgti.png"/>
+    <ion-card-content>
+      <ion-card-title>
+        Golf Gti
+        </ion-card-title>
+      <p>
+        R$ 40.000
+      </p>
+      <button ion-button clear item-end>Gerar Orçamento</button>
+    </ion-card-content>
+  </ion-card>
+-->
+
+
+</ion-content>
