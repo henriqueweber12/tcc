@@ -13,7 +13,7 @@ export class VeiculosPage {
   public lista: Array<Veiculo>;
 
   constructor(public navCtrl: NavController,
-              public veiculoService: VeiculoService) {
+              public veiculoService: VeiculoService,) {
 
     this.buscarVeiculo();             
   }
@@ -25,5 +25,6 @@ export class VeiculosPage {
       console.error(error);
     })
   }
+
 }
 

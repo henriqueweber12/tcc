@@ -1,14 +1,16 @@
+import { VeiculoImagem } from './../../model/veiculoimagem';
 import { VeiculoService } from './../../services/veiculo-service';
 import { VeiculosPage } from './../veiculos/veiculos';
 import { Veiculo } from './../../model/veiculo';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 @Component({
   selector: 'page-cadastroveiculos',
   templateUrl: 'cadastroveiculos.html',
-  providers: [VeiculoService]
+  providers: [VeiculoService, Camera]
 })
 export class CadastroveiculoPage {
 
@@ -16,11 +18,13 @@ export class CadastroveiculoPage {
   public onCallback: Function;
   public edicao = false;
   public formCadVei: FormGroup;
+  public listaImagens: Array<VeiculoImagem>;
 
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public veiculoService: VeiculoService, public formBuilder: FormBuilder ) {
+              public veiculoService: VeiculoService, public formBuilder: FormBuilder,            
+              private camera: Camera ) {
 
                 this.formCadVei = this.formBuilder.group({
                   codigo: ['', Validators.required],                 
@@ -52,6 +56,28 @@ export class CadastroveiculoPage {
   }
   });
 }
+
+abrirCamera(){
+  const options: CameraOptions = {
+    quality: 100,
+    destinationType: this.camera.DestinationType.DATA_URL,
+    encodingType: this.camera.EncodingType.JPEG,
+    mediaType: this.camera.MediaType.PICTURE
+  }
+
+  this.camera.getPicture(options).then((imageData) => {
+    // imageData is either a base64 encoded string or a file URI
+    // If it's base64:
+    let base64Image = 'data:image/jpeg;base64,' + imageData;
+    let veiculoImagem = new VeiculoImagem();
+    veiculoImagem.imagem = base64Image;
+    this.listaImagens.push(veiculoImagem);
+   }, (err) => {
+    // Handle error
+   });
+ }
+
+
  };
  
   

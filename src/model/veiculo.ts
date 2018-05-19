@@ -1,3 +1,4 @@
+import { VeiculoImagem } from './veiculoimagem';
 export class Veiculo{
 
     codigo: number;
@@ -10,5 +11,5 @@ export class Veiculo{
     valor: number;
     valorinicial : number;
     valorfinal: number;
-    
+    imagens : Array<VeiculoImagem>;
 }
