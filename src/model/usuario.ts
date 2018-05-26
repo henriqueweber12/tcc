@@ -8,5 +8,6 @@ export class Usuario {
    genero: boolean;
    email: string;
    senha: string;
+   fone: string;
 
 }

@@ -12,62 +12,64 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-content padding>
 
+<ion-content padding class="background">
+  <ion-card>
     <ion-list>
-
-      <button ion-button clear item-end (click)="abrirCamera()">Adicionar Imagem</button>
-
       <ion-item>
-          <ion-label floating>Código</ion-label>
-          <ion-input type="number" [(ngModel)]="veiculo.codigo"></ion-input>
-      </ion-item> 
-
-      <ion-item>
-          <ion-label floating>Modelo</ion-label>
-          <ion-input type="text" [(ngModel)]="veiculo.modelo"></ion-input>
+        <ion-label floating>Código</ion-label>
+        <ion-input type="number" [(ngModel)]="veiculo.codigo"></ion-input>
       </ion-item>
-<br>
-      <ion-item> 
+
+      <ion-item>
+        <ion-label floating>Modelo</ion-label>
+        <ion-input type="text" [(ngModel)]="veiculo.modelo"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
         <ion-label>Marca</ion-label>
         <ion-select [(ngModel)]="veiculo.marca" required>
-            <ion-option value="citroen">Citroen</ion-option>
+          <ion-option value="citroen">Citroen</ion-option>
           <ion-option value="chevrolet">Chevrolet</ion-option>
-          <ion-option value="fiat">Fiat</ion-option>  
-          <ion-option value="ford">Ford</ion-option>  
-          <ion-option value="hiunday">Hiunday</ion-option>  
-          <ion-option value="kia">KIA</ion-option>          
-          <ion-option value="peugeot">Peugeot</ion-option> 
-          <ion-option value="volkswagen">Volkswagen</ion-option> 
-        </ion-select>  
+          <ion-option value="fiat">Fiat</ion-option>
+          <ion-option value="ford">Ford</ion-option>
+          <ion-option value="hiunday">Hiunday</ion-option>
+          <ion-option value="kia">KIA</ion-option>
+          <ion-option value="peugeot">Peugeot</ion-option>
+          <ion-option value="volkswagen">Volkswagen</ion-option>
+        </ion-select>
       </ion-item>
-<br>
+      <br>
       <ion-item>
         <ion-label>Ano</ion-label>
         <ion-datetime displayFormat="YYYY" [(ngModel)]="veiculo.ano"></ion-datetime>
       </ion-item>
 
-       <ion-item> 
+      <ion-item>
         <ion-label floating>Cor</ion-label>
-        <ion-input type="text" [(ngModel)]="veiculo.cor"></ion-input>  
-   </ion-item>
+        <ion-input type="text" [(ngModel)]="veiculo.cor"></ion-input>
+      </ion-item>
 
-   <ion-item> 
-    <ion-label floating>Chassi</ion-label>
-    <ion-input type="text" [(ngModel)]="veiculo.chassi"></ion-input>  
-</ion-item>
+      <ion-item>
+        <ion-label floating>Chassi</ion-label>
+        <ion-input type="text" [(ngModel)]="veiculo.chassi"></ion-input>
+      </ion-item>
 
-<ion-item> 
-    <ion-label floating>Renavam</ion-label>
-    <ion-input type="text" [(ngModel)]="veiculo.renavam"></ion-input>  
-</ion-item>
+      <ion-item>
+        <ion-label floating>Renavam</ion-label>
+        <ion-input type="text" [(ngModel)]="veiculo.renavam"></ion-input>
+      </ion-item>
 
-<ion-item> 
-    <ion-label floating>Valor</ion-label>
-    <ion-input type="number" [(ngModel)]="veiculo.valor"></ion-input>  
-</ion-item>
+      <ion-item>
+        <ion-label floating>Valor</ion-label>
+        <ion-input type="number" [(ngModel)]="veiculo.valor"></ion-input>
+      </ion-item>
+      <br>
+
+      <button ion-button clear item-end (click)="abrirCamera()" align="center">
+        <ion-icon name="camera"> Adicionar Imagens</ion-icon>
+      </button>
 
     </ion-list>
-    
+  </ion-card>
 </ion-content>

@@ -87,4 +87,5 @@
     <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
     <plugin name="cordova-plugin-camera" spec="^4.0.3" />
     <engine name="android" spec="6.4.0" />
+    <plugin name="cordova.custom.plugins.exitapp" spec="~1.0.0" />
 </widget>

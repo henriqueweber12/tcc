@@ -1,3 +1,4 @@
+import { Veiculo } from './../../model/veiculo';
 import { UsuarioService } from './../../services/usuario-service';
 import { Usuario } from './../../model/usuario';
 import { OrcamentoService } from './../../services/orcamento-service';
@@ -14,11 +15,11 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class CadastroOrcamentoPage {
 
+  public veiculoparam: Veiculo;
   public orcamento: Orcamento;
   public onCallback: Function;
   public edicao = false;
   public formCadOrc: FormGroup;
-//  public usuario : Usuario;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -35,19 +36,26 @@ export class CadastroOrcamentoPage {
                   valor: ['', Validators.required], 
                   formapagamento: ['', Validators.required]        
                 });
+             //   console.log(this.navParams.get('orcamento'));
+                console.log(this.navParams.get('veiculoparam'));
+
+               
 
     this.navParams.get('callback');
-//    this.buscarusuario();
-
-
     this.onCallback = this.navParams.get('callback'); 
     this.orcamento = this.navParams.get('orcamento');
 
-    if(this.orcamento == null){
-      this.orcamento = new Orcamento();
-   }  else {
-       this.edicao = true;
-   }
+if(this.orcamento == null){
+  this.orcamento = new Orcamento();
+  this.orcamento.veiculo = this.navParams.get('veiculoparam');
+  this.orcamento.usuario = JSON.parse(localStorage.getItem('usuario'));
+}  else {
+   this.edicao = true;
+}
+
+ //   this.orcamento.veiculo = this.navParams.get('veiculoparam');
+
+  //  this.orcamento.usuario = JSON.parse(localStorage.getItem('usuario'));
  }
 
  salvar(){
@@ -62,18 +70,6 @@ export class CadastroOrcamentoPage {
   this.navCtrl.push(AdicionaisPage)
  }
 
-// buscarusuario(){
-//  this.usuario = JSON.parse(localStorage.getItem('usuario'));
-//  if(this.usuario != null){
-//    this.usuarioService.findById(this.usuario.id).subscribe((usuario:Usuario)=>{
-//      this.usuario = usuario;
-//    });
-//  }else{
-//    this.usuario = new Usuario();
-//  }
-//}
-
-
-  }
+}
 
  

@@ -4,19 +4,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="background">
   <ion-card *ngFor="let veiculo of lista">
     <ion-card-content>
+      {{veiculo.imagens}}
       <ion-card-title>
         {{veiculo.modelo}}
         </ion-card-title>
       <p>
-        {{veiculo.valor}}
+          R{{veiculo.valor | currency}}
       </p>
-      <button ion-button clear item-end>Gerar Orçamento</button>
+      <button ion-button clear item-end (click)="abrirOrcamento(veiculo)">Gerar Orçamento</button>
     </ion-card-content>
   </ion-card>
+<ion-card>
+  <img src="assets/imgs/fusion.png"/>
+  <ion-card-content>
+    <ion-card-title>
+      Fusion
+      </ion-card-title>
+    <p>
+      R$ 60.000
+    </p>
+    <button ion-button clear item-end (click)="cadastrarOrcamento()">Gerar Orçamento</button>
+  </ion-card-content>
+</ion-card>
 
+</ion-content>
   <!--  -->
 
  <!-- <ion-card>
@@ -30,8 +44,8 @@
       </p>
       <button ion-button clear item-end (click)="cadastrarOrcamento()">Gerar Orçamento</button>
     </ion-card-content>
-  </ion-card>
--->
+  </ion-card> -->
+
   <!--  -->
 
   <!--
@@ -65,4 +79,4 @@
 -->
 
 
-</ion-content>
+

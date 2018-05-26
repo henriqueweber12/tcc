@@ -1,6 +1,15 @@
+<!-- <ion-header>
+    <ion-navbar>
+      <ion-title>{{tabTitle}}</ion-title>
+      <ion-buttons end>
+        <button ion-button color="primary" (click)="sair()">Logout</button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header> -->
 <ion-tabs color="primary">
   <ion-tab [root]="tab1Root" tabTitle="Veículos" tabIcon="paper"></ion-tab>
   <ion-tab [root]="tab2Root" tabTitle="Orçamentos" tabIcon="list"></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="Cadastro" tabIcon="car"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="Perfil" tabIcon="person"></ion-tab>
+  <button ion-button outline color="danger" (click)="sair()">Logout</button>
 </ion-tabs>

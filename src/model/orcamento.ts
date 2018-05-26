@@ -1,10 +1,11 @@
+import { Veiculo } from "./veiculo";
+import { Usuario } from "./usuario";
+
 export class Orcamento{
 
     codigo: number;
-    nomecliente : string;
-    emailcliente : string;
-    fonecliente: number;
-    veiculo : number;
+    usuario: Usuario;
+    veiculo : Veiculo;
     valor: number;
     formapagamento : number;
 }

@@ -1,64 +1,71 @@
 <ion-header>
-    <ion-navbar color="primary">
-      <ion-title>
-        Cadastro Orçamento
-      </ion-title>
+  <ion-navbar color="primary">
+    <ion-title>
+      Cadastro Orçamento
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="abrirAdicionais()">
+        <ion-icon name="checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="background">
+  <ion-card>
+    <ion-list>
+
+      <ion-item>
+     <!--   <ion-label floating>Nome</ion-label>
+        <ion-input type="text" [(ngModel)]="orcamento.nomecli"></ion-input> -->
+        <div>
+          <span>{{orcamento.usuario.nome}}</span>
+        </div>  
+      </ion-item>
+
+      <ion-item>
+     <!--   <ion-label floating>Email</ion-label>
+        <ion-input type="text" [(ngModel)]="orcamento.emailcli"></ion-input>  -->
+        <div>
+            <span>{{orcamento.usuario.email}}</span>
+          </div>  
   
-      <ion-buttons end>
-        <button ion-button icon-only (click)="abrirAdicionais()">
-          <ion-icon name="checkmark"></ion-icon>
-        </button>
-      </ion-buttons>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content>
-    <ion-content padding>
-  
-      <ion-list>
-  
-        <ion-item>
-            <ion-label floating>Código</ion-label>
-            <ion-input type="number" [(ngModel)]="orcamento.codigo"></ion-input>
-        </ion-item> 
-  
-        <ion-item>
-            <ion-label floating>Nome</ion-label>
-            <ion-input type="text" [(ngModel)]="orcamento.nomecli"></ion-input>
-        </ion-item>
-  
-        <ion-item> 
-             <ion-label floating>Email</ion-label>
-             <ion-input type="text" [(ngModel)]="orcamento.emailcli"></ion-input>  
-        </ion-item>
-  
-        <ion-item> 
-              <ion-label floating>Telefone</ion-label>
-              <ion-input type="text" [(ngModel)]="orcamento.fonecli"></ion-input>  
-         </ion-item>
-  
-         <ion-item> 
-          <ion-label floating>Veiculo</ion-label>
-          <ion-input type="text" [(ngModel)]="orcamento.veiculo"></ion-input>  
-     </ion-item>
-  
-     <ion-item> 
-      <ion-label floating>Valor</ion-label>
-      <ion-input type="text" [(ngModel)]="orcamento.valor"></ion-input>  
-  </ion-item>
-  
-  <br>
-      <ion-item> 
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Telefone</ion-label>
+        <ion-input type="number" [(ngModel)]="orcamento.usuario.fone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <!-- <ion-label floating>{{veiculo.modelo}}</ion-label>
+          <div type="text" [(ngModel)]="orcamento.veiculo"></ion-input>  -->
+        <div>
+          <span>{{orcamento.veiculo.modelo}}</span>
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <!--   <ion-label floating>Valor</ion-label>
+      <ion-input type="text" [(ngModel)]="orcamento.valor"></ion-input>  -->
+        <div>
+          <span>R{{orcamento.veiculo.valor | currency}}</span>
+        </div>
+      </ion-item>
+
+      <br>
+      <ion-item>
         <ion-label>Modo Pagamento</ion-label>
         <ion-select [(ngModel)]="orcamento.modopag" required>
           <ion-option value="financiado">Financiamento</ion-option>
-          <ion-option value="avista">À Vista</ion-option>   
-          <ion-option value="parcelado">Parcelado</ion-option>  
-          <ion-option value="consorcio">Consórcio</ion-option>  
-        </ion-select>  
+          <ion-option value="avista">À Vista</ion-option>
+          <ion-option value="parcelado">Parcelado</ion-option>
+          <ion-option value="consorcio">Consórcio</ion-option>
+        </ion-select>
       </ion-item>
-  
-      </ion-list>
-      
-  </ion-content>
-  
+
+    </ion-list>
+  </ion-card>
+</ion-content>

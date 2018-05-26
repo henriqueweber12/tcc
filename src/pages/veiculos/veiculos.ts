@@ -1,3 +1,4 @@
+import { CadastroOrcamentoPage } from './../cadastroorcamentos/cadastroorcamentos';
 import { VeiculoService } from './../../services/veiculo-service';
 import { Veiculo } from './../../model/veiculo';
 import { Component } from '@angular/core';
@@ -11,6 +12,7 @@ import { NavController, AlertController } from 'ionic-angular';
 export class VeiculosPage {
 
   public lista: Array<Veiculo>;
+  public veiculo: Veiculo;
 
   constructor(public navCtrl: NavController,
               public veiculoService: VeiculoService,) {
@@ -26,5 +28,9 @@ export class VeiculosPage {
     })
   }
 
+  abrirOrcamento(veiculo){
+    console.log(veiculo);
+    this.navCtrl.push(CadastroOrcamentoPage, {veiculoparam: veiculo});
+  }
 }
 

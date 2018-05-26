@@ -1,3 +1,5 @@
+import { TabsPage } from './../pages/tabs/tabs';
+import { CadastroveiculoPage } from './../pages/cadastroveiculos/cadastroveiculos';
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';

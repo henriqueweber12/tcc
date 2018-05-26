@@ -1,71 +1,50 @@
-<ion-content padding>
+  <ion-content class="background">
+  <ion-card>
+    <ion-card-header>
 
-  <ion-grid>
-    <!-- Logo -->
-    <ion-row justify-content-center>
-      <ion-img src="assets/imgs/logos.png" width="100" height="100"></ion-img>
-    </ion-row>
+      <ion-row justify-content-center>
+          <ion-img src="assets/imgs/logos.png" width="100" height="100"></ion-img>
+        </ion-row>
 
-    <!-- Usuário e Senha-->
-    <ion-row justify-content-center>
-
-      <ion-list class="inputs">
+    </ion-card-header>  
+    <ion-card-content>
+      <ion-list no lines>
         <ion-item>
           <ion-label floating>Usuário</ion-label>
-          <ion-input type="email" [(ngModel)]="usuario.email" required></ion-input>
+          <ion-input type="email"  [(ngModel)]="usuario.email" required></ion-input>
         </ion-item>
+
         <ion-item>
-          <ion-label floating>Senha</ion-label>
-          <ion-input type="password" [(ngModel)]="usuario.senha" required></ion-input>
+            <ion-label floating>Senha</ion-label>
+            <ion-input type="password" [(ngModel)]="usuario.senha" required></ion-input>
         </ion-item>
+
+        <ion-item>
+            <ion-label>Lembrar-me</ion-label>
+            <ion-checkbox color="danger" checked="true"></ion-checkbox>
+          </ion-item>
+
+        <button ion-button color="danger" block outline (click)="logar()">LOGAR</button>          
       </ion-list>
 
-    </ion-row>
+        <p class="scrool-content">OU</p>
 
-    <!-- Botão Logar-->
-    <ion-row>
-      <button color="primary" ion-button block icon-start (click)="logar()">
-        <ion-icon name="log-in"></ion-icon>
-        Logar</button>
-    </ion-row>
+        <button ion-button color="danger" block outline (click)="abrirCadastroUsuario()">CADASTRE-SE</button>
 
-    <!-- Botão Cadastrar-->
-  <!--   <ion-row>
-      <button color="primary" ion-button block icon-start (click)="abrirCadastroUsuario()">
-        <ion-icon name="person"></ion-icon>
-        Cadastrar</button>
-    </ion-row>-->
+      <!--  <button ion-button color="primary" ion-left block>
+        <ion-icon name="logo-facebook"></ion-icon>    
+        <div> Logar pelo facebook</div>
+        </button>
 
-    <button ion-button clear item-end (click)="abrirCadastroUsuario()">   
-      <ion-icon name="person"></ion-icon> Cadastrar </button>
-  
- <!--   <p>
-    <a (click)="abrirCadastroUsuario()">Cadastrar-se</a>  
-    </p>  -->
-  </ion-grid>
+        <button ion-button color="danger" ion-left block>
+            <ion-icon name="logo-google"></ion-icon>    
+            <div> Logar pela conta google</div>
+            </button>  -->
 
-  <ion-list>
-    <ion-item>
-      <ion-label>Lembrar-me</ion-label>
-      <ion-checkbox color="primary" checked="true"></ion-checkbox>
-    </ion-item>
-  </ion-list>
-
-<!--  <ion-fab right bottom>
-    <button ion-fab color="primary">
-      <ion-icon name="arrow-dropleft"></ion-icon>
-    </button>
-    <ion-fab-list side="left">
-      <button ion-fab>
-        <ion-icon name="logo-facebook"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon name="logo-twitter"></ion-icon>
-      </button>
-      <button ion-fab>
-        <ion-icon name="logo-googleplus"></ion-icon>
-      </button>
-    </ion-fab-list>
-  </ion-fab>  -->
-
-</ion-content>
+            <ion-item>
+                <p>Esqueceu sua senha?<a> Clique aqui</a></p>
+            </ion-item>
+            
+       </ion-card-content> 
+</ion-card>
+</ion-content>   
